@@ -1,0 +1,20 @@
+<svg id="graph" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none" stroke="#CACFD2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path fill="#73C6B6" stroke="#73C6B6" stroke-width="2" d="m200,280c80,0 80,-80 80,-80c0,0 80,0 80,0c0,0 -160,-160 -160,-160c0,0 0,160 0,160c0,0 -160,0 -160,0c0,0 0,80 0,80c0,0 160,0 160,0z" id="svg_2"/>
+    <line id="svg_4" y2="400" x2="200" y1="0" x1="200" stroke="#000000"/>
+    <line id="svg_5" y2="200" x2="400" y1="200" x1="0" stroke="#000000"/>
+    <line stroke="#000d19" id="svg_15" y2="205" x2="120" y1="195" x1="120"/>
+    <line stroke="#000d19" id="svg_16" y2="205" x2="40" y1="195" x1="40"/>
+    <line stroke="#000d19" id="svg_17" y2="205" x2="280" y1="195" x1="280"/>
+    <line stroke="#000d19" id="svg_18" y2="205" x2="360" y1="195" x1="360"/>
+    <line stroke="#000d19" id="svg_20" transform="rotate(90 200,360) " y2="365" x2="200" y1="355" x1="200"/>
+    <line stroke="#000d19" id="svg_21" transform="rotate(90 200,120) " y2="125" x2="200" y1="115" x1="200"/>
+    <line stroke="#000d19" id="svg_22" transform="rotate(90 200,40) " y2="45" x2="200" y1="35" x1="200"/>
+    <text stroke="#000d19" id="svg_23" font-size="16" y="194.125" x="17.8125" fill="black">-R</text>
+    <text stroke="#000d19" id="svg_24" font-size="16" y="364.5" x="174.5" fill="black">-R</text>
+    <text stroke="#000d19" id="svg_25" font-size="16" y="44.5" x="181.25" fill="black">R</text>
+    <text stroke="#000d19" id="svg_27" font-size="16" y="191.8125" x="362.4375" fill="black">R</text>
+    <path fill="black" id="svg_6" stroke="#000d19" d="m398,196l0,8l3,-4l-3,-4z"/>
+    <path fill="black" id="svg_7" stroke="#000d19" d="m198.587,-2.47945l0.0363,8.03926l2.91423,-4.05457l-2.95053,-3.98469z" transform="rotate(-90 200,1.5) "/>
+
+
+</svg>

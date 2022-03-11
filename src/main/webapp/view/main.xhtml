@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ace="http://www.icefaces.org/icefaces/components">
+
+<ui:composition template="template.xhtml">
+
+    <ui:define name="libraries">
+        <title>Main page</title>
+    </ui:define>
+
+    <ui:define name="content">
+        <div class="req-field">
+            <div class="left-sided">
+                <span id="label-4-graph" class="teg-label">The graph area</span>
+                <div class="graph-field">
+                    <div id="coordinate"></div>
+                    <ui:include src="../resources/svg_png/graph.svg"/>
+                </div>
+            </div>
+            <div class="right-sided">
+                <h:form styleClass="form-field" prependId="false">
+                    <span id="label-4-form" class="teg-label">Please enter point data</span>
+                    <div class="ui-frame">
+                        <div class="ui-box">
+                            <span class="label">Select value of the X [-2..2]</span>
+                            <ace:sliderEntry min="-2" max="2" stepPercent="25" value="${PointBean.point.x}"/>
+                        </div>
+                        <div class="ui-box">
+                            <span class="label">Enter value of the Y [-5..3]</span>
+                            <h:inputText id="input" styleClass="text-input sized" maxlength="16" autocomplete="off"
+                                         value="${PointBean.point.y}"/>
+                        </div>
+                        <div class="ui-box">
+                            <span class="label">Select value of the R</span>
+                            <div class="checkbox-list sized flexed">
+                                <div class="checkbox-label">
+                                    <h:selectBooleanCheckbox styleClass="checkbox" name="r1" onclick="f(1)"
+                                                             value="${PointBean.point.r1}"/>
+                                    <span class="checkbox-value">1</span>
+                                </div>
+                                <div class="checkbox-label">
+                                    <h:selectBooleanCheckbox styleClass="checkbox" name="r2" onclick="f(2)"
+                                                             value="${PointBean.point.r2}"/>
+                                    <span class="checkbox-value">2</span>
+                                </div>
+                                <div class="checkbox-label">
+                                    <h:selectBooleanCheckbox styleClass="checkbox" name="r3" onclick="f(3)"
+                                                             value="${PointBean.point.r3}"/>
+                                    <span class="checkbox-value">3</span>
+                                </div>
+                                <div class="checkbox-label">
+                                    <h:selectBooleanCheckbox styleClass="checkbox" name="r4" onclick="f(4)"
+                                                             value="${PointBean.point.r4}"/>
+                                    <span class="checkbox-value">4</span>
+                                </div>
+                                <div class="checkbox-label">
+                                    <h:selectBooleanCheckbox styleClass="checkbox" name="r5" onclick="f(5)"
+                                                             value="${PointBean.point.r5}"/>
+                                    <span class="checkbox-value">5</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui-box">
+                            <span id="submit-msg" class="label"> </span>
+                            <h:commandButton id="submit" styleClass="submit-button sized" value="Submit"
+                                             action="${PointBean.insertPoint()}" update=":wrapper">
+                            </h:commandButton>
+                            <h:commandButton styleClass="submit-button sized" value="Clear" id="clear"
+                                             action="#{PointBean.removePoint()}" update=":wrapper">
+                            </h:commandButton>
+                        </div>
+                    </div>
+                </h:form>
+            </div>
+        </div>
+        <div class="table-field">
+            <span id="label-4-table" class="teg-label">Table of results</span>
+            <h:form styleClass="table-form">
+                <h:panelGroup id="wrapper" layout="block">
+                    <h:dataTable id="points" value="#{PointBean.pointList}" var="point" styleClass="table"
+                                 headerClass="table-header" rowClasses="odd-row,even-row" columnClasses="column">
+                        <h:column>
+                            <f:facet name="header">X(int)</f:facet> #{point.x}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Y(double)</f:facet> #{point.y}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">R(int)</f:facet> #{point.r}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Status</f:facet>
+                            <h:outputLabel rendered="#{point.result}" style="color: #58D68D">Inside</h:outputLabel>
+                            <h:outputLabel rendered="#{!point.result}" style="color: #EC7063">Outside</h:outputLabel>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+            </h:form>
+        </div>
+        <h:outputScript library="js" name="main.js"/>
+    </ui:define>
+
+</ui:composition>
+
+</html>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<f:view>
+
+    <h:head>
+        <ui:insert name="libraries" />
+        <h:outputStylesheet library="css" name="main.css" />
+        <h:outputScript library="js" name="jquery/jquery-3.5.1.min.js" />
+        <link rel="icon" href="${resource['svg_png/baby-yoda-icon.png']}"/>
+    </h:head>
+
+    <h:body id="document">
+        <div class="wrapper">
+            <div class="sidebar">
+                <div class="navbar flexed">
+                    <span id="logo">
+                        <h:graphicImage value="baby-yoda-cute.png" width="50"/>
+                    </span>
+                    <div class="navpage flexed">
+                        <h:link styleClass="home" value="Home" outcome="index" />
+                        <h:link styleClass="main" value="Main" outcome="main" />
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <ui:insert name="content" />
+            </div>
+        </div>
+    </h:body>
+
+</f:view>
+</html>

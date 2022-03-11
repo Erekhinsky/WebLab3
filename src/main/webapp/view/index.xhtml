@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="template.xhtml">
+
+    <ui:define name="libraries">
+        <title>Home page</title>
+    </ui:define>
+
+    <ui:define name="content">
+        <div class="intro flexed">
+            <div class="ui-clock">
+                <span class="cdigit">0</span>
+                <span class="cdigit">0</span>
+                <span class="delimiter">:</span>
+                <span class="cdigit">0</span>
+                <span class="cdigit">0</span>
+                <span class="delimiter">:</span>
+                <span class="cdigit">0</span>
+                <span class="cdigit">0</span>
+            </div>
+            <div class="ui-date">
+                <span id="month">00</span>
+                <span id="day">00</span>
+                <span id="year">0000</span>
+            </div>
+        </div>
+        <h:outputScript library="js" name="index.js" />
+    </ui:define>
+
+</ui:composition>
+
+</html>
